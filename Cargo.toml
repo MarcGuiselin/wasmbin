@@ -35,6 +35,7 @@ extended-name-section = []
 multi-memory = []
 tail-call = []
 threads = []
+custom-page-sizes = []
 nightly = []
 
 [dev-dependencies]
