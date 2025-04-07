@@ -29,6 +29,7 @@ proposals = [
     "multi-memory",
     "tail-call",
     "threads",
+    "custom-page-sizes",
 ]
 exception-handling = []
 extended-name-section = []
