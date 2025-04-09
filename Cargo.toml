@@ -26,15 +26,11 @@ default = []
 proposals = [
     "exception-handling",
     "extended-name-section",
-    "multi-memory",
-    "tail-call",
     "threads",
     "custom-page-sizes",
 ]
 exception-handling = []
 extended-name-section = []
-multi-memory = []
-tail-call = []
 threads = []
 custom-page-sizes = []
 nightly = []
