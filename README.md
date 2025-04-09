@@ -18,6 +18,7 @@ Following WebAssembly proposals are supported in addition to the core spec and c
 - [`tail-call`](https://github.com/WebAssembly/tail-call)
 - [`threads`](https://github.com/WebAssembly/threads)
 - [`custom-page-sizes`](https://github.com/WebAssembly/custom-page-sizes)
+- [`memory64`](https://github.com/WebAssembly/memory64)
 
 ## Motivation
 
