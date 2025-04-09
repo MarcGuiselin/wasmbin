@@ -114,6 +114,11 @@ pub type Expression = Vec<Instruction>;
 
 impl crate::builtins::WasmbinCountable for Expression {}
 
+#[cfg(not(feature = "memory64"))]
+pub type MemSize = u32;
+#[cfg(feature = "memory64")]
+pub type MemSize = u64;
+
 /// [Memory immediate argument](https://webassembly.github.io/spec/core/binary/instructions.html#memory-instructions).
 #[derive(Debug, PartialEq, Eq, Hash, Clone, Visit)]
 #[cfg_attr(not(feature = "multi-memory"), derive(Wasmbin))]
@@ -121,7 +126,7 @@ pub struct MemArg {
     pub align_log2: u32,
     #[cfg(feature = "multi-memory")]
     pub memory: MemId,
-    pub offset: u32,
+    pub offset: MemSize,
 }
 
 #[cfg(feature = "multi-memory")]
@@ -152,7 +157,7 @@ const _: () = {
             Ok(Self {
                 align_log2,
                 memory,
-                offset: u32::decode(r)?,
+                offset: MemSize::decode(r)?,
             })
         }
     }

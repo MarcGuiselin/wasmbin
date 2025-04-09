@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use super::MemArg;
+use super::{MemArg, MemSize};
 #[cfg(feature = "multi-memory")]
 use crate::instructions::MemId;
 use crate::io::{Decode, DecodeError, Encode, Wasmbin};
@@ -23,7 +23,7 @@ use crate::visit::Visit;
 pub struct AlignedMemArg<const ALIGN_LOG2: u32> {
     #[cfg(feature = "multi-memory")]
     pub memory: MemId,
-    pub offset: u32,
+    pub offset: MemSize,
 }
 
 impl<const ALIGN_LOG2: u32> From<AlignedMemArg<ALIGN_LOG2>> for MemArg {
